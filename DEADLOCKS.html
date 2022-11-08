@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>os notes-deadlock</title>
+</head>
+<body>
+<style>
+body {
+  background-color: rgb(249, 252, 249);}
+h1 {
+     color: rgb(2, 2, 2);
+   text-transform: uppercase;
+  text-align: center;
+   text-decoration: underline;
+   text-shadow: 2px 2px 4px #000000; 
+   font-size: 45px;}
+   </style>
+<h1>DEADLOCKS</h1>
+
+<style> 
+#div2{
+  width: 408px;
+  height: 150px;
+  padding: 20px;
+  background-color: coral;
+  box-shadow: 10px 10px;
+}
+#div1{
+  width: 408px;
+  height: 150px;
+  padding: 20px;
+  background-color: light pink;
+  box-shadow: 8px 8px;
+}
+
+</style>
+
+
+<div id="div2"><B>Deadlock</B> refers to a speific situation when 2 or more processes are Waiting for resources in a circular chain
+      or two or more processes are waiting for each other to release a resource.
+      A Deadlock is a situation where each of the computer process waits for a resource which is being
+       assigned to some another process. None of the process gets executed since the 
+       resource it needs,is held by some other process which is also waiting for 
+       some other resource to be released.
+</div>
+<div id="div3"><B><I>BANKER'S ALGORITHM<</I></B><br>Banker's Algorithm is a deadlock <mark>avoidance</mark>  algorithm. It is also used for
+  <mark> deadlock detection and resource allocation </mark> . This algorithm can be used in the banking system to ensure that the bank never allocates its available cash in such a way that it can 
+no longer meet the requirement of all of its customers.<br>
+Implemented by <i><b> resource request graph .</b></i></div>
+<br>
+<style>
+img {
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+.dropbtn {
+  background-color: green;
+  color: white;
+  padding: 17px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  box-shadow: 0px 11px 18px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+p{
+  font-size: large;
+}
+h2{
+  border-left: 4px solid silver;
+}
+#div3 {
+  border: 1px solid black;
+  margin-top: -173px;
+    margin-bottom: 183px;
+    margin-right: 10px;
+    margin-left: 890px;padding: 20px;box-shadow: 6px 6px;width: 390px;
+  height: 150px;
+  background-color: lightcyan;
+  font-size:medium;
+} 
+  
+  
+  
+</style></head>
+<body>
+<br>
+<h2>Resource Allocation graph</h2>
+<p>The deadlock can be represented by a resource allocation graph.A directed graph is used to describe the deadlock.Has aset of edges E and vertices E such that {V,E}
+  <br>The necessary conditions and methods for handling deadlock are given below as dropdown content:</p>
+
+<div class="dropdown" style="float:left;">
+  <button class="dropbtn">Conditions</button>
+  <div class="dropdown-content" style="left:0;">
+  <a href="#">Mutex condition</a>
+  <a href="#">Hold and wait condition</a>
+  <a href="#">non-preemptive condition</a>
+<a href="#">Circular wait condition</a>
+
+  </div>
+</div>
+
+<div  class="dropdown" style="float:right;">
+  <button class="dropbtn">Handling</button>
+  <div class="dropdown-content">
+  <a href="#">Deadlock prevention</a>
+  <a href="#">Deadlock avoidance</a>
+  <a href="#">Deadlock detection</a>
+<a href="#">Deadlock recovery</a>
+
+  </div>
+</div><br><br><br>
+<img src="deadlock.png" alt="deadlock" width="500" height="100">
+</body></html>

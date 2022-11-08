@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>os Mod 3 notes</title>
+</head>
+<body>
+<style>
+body {
+            height: 100%;
+            background-color: lightgoldenrodyellow;
+            background-image: linear-gradient(to left,ghostwhite,rgb(245, 175, 198));}
+          
+  
+h1 {
+  color: red;
+   text-transform: uppercase;
+  text-align: center;
+   text-decoration: underline;
+   text-shadow: 2px 2px 2px #070707; 
+   
+   font-size: 45px;
+}
+ mark{
+  background-color: #f58b8b;
+ } 
+ img {
+  border-radius: 4%;
+  display: block;
+  margin-left: 30%;
+  margin-right: auto;}
+ ol.a {
+            life-style-type: upper-roman;
+        }
+        ol.b{
+          list-style: lower-alpha;
+        }
+        ul.c{
+          list-style: square;
+        }
+ h2 {
+  
+  border-left: 4px solid rgb(252, 165, 4);
+    text-align: left;  
+    text-shadow: 1px 2px goldenrod;
+  
+  }
+  h3 { font-size:x-large;
+  font-style: normal;
+text-align: center;
+background-color: #d6c1c1;
+border-left: 4px solid #c71313;
+border-right: 4px solid #d30d0d;}
+  p{
+    font-size: large;}
+
+    div{
+      font-size: large;
+    }
+</style>
+<h1><B>OPERATING SYSTEM NOTES<BR>( MOD 3 )</B></h1>
+<h2>  PROCESS SYNCHRONIZATION </h2>
+  <p>The process synchronisation means to coordinate simultaneous threads or processes inorder to avoid
+    accidentally happening of race conditions and to get the correct runtime order.
+  To avoid the <b>race conditions</b> ,the process synchronisation resulted critical section problem.</p>
+    <br>
+<h3>.. .. .. .. .. Race Condition.. .. .. ..  ..</h3>
+<p class="p1"><i><b>Several processes access and manipulate the same data simultaneosly/
+concurrently and the outcome of the execution depends on
+the particular order in which the access takes place, is called
+a race condition. Inorder to protect against race condition, we need to ensure that only
+one process at a time can be manipulating the variable counter . 
+To make such a guarantee the processes needs to be synchronized in some way . 
+A race condition is an <mark>undesirable situation</mark>  that occurs when a device or<mark> system attempts to perform two or more operations 
+at the same time</mark>, but because of the nature of the device or system, the operations must be done in the proper sequence to be
+ done correctly.</b></i></p>
+<div><ul class="a"><i><b>Race condition occurs due to :</b> </i><li>timing and which process starts
+  </li>
+<li>Interleaving,one cant predict what will happen next while the processes are executing.</li></ul>
+
+<div><ol class="b"><i><b>Solutions to race conditions:</b></i><li> disable interrupts</li>
+  <li>lock variables</li><li>Strict alternation</li></ol></div>
+<br>
+<h4>CRITICAL SECTION </h4>
+<style>
+h4 {
+  color: green;
+  text-align: center;
+  text-decoration-line: underline;
+  text-decoration-color: whitesmoke;  
+  font-size: 30px;
+  color: white;
+
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+</style>
+<p><ul class="c"><li>The critical section problem arises because of coordination of the interaction of processes.
+  Every process has critical section</li><li>For data access synchronisation,the critical section is used.Cant block a process.So can only be
+    used for mutex.
+    <li>It is a control structure.Over a shared variable ,it is used to implement convenient mutual exclusion(only 1 process is executed in its critical region. ) .</li>
+  </li> </ul></p>
+<img src="critical.jpg" alt="critical" width="330px" height="237px">
+
+ 
+<P style="display:inline-flexbox">Each process has critical section segment of code
+
+Process may be changing common variables, updating table,writing file, etc.
+
+When one process in critical section, no other may be in its critical section.
+
+Ie, no two processes are allowed to execute in the critical section at the same time.
+
+Critical section problem is to design protocol to solve this.
+In a related situation, a critical section may be used to ensure that a shared resource,
+ for example, a printer, can only be accessed by one process at a time.</P>
+<br>
+<p style="background-color:Tomato;"><b>Solution to critical section must satisfy 3 conditions:<br>
+
+1. <mark> Mutual Exclusion </mark> :If process Pi is executing in its critical section,
+then no other processes can be executing in their critical sections
+<br>
+
+2. <mark>Progress</mark> : If no process is executing in its critical section and some
+processes wish to enter their critical sections, then only those
+processes that are not executing in their remainder sections can
+participate in deciding which will enter its critical section next, and
+this selection cannot be postponed indefinitely.
+
+<br>
+3.<mark>Bounded waiting </mark> :A bound must exist on the number of times
+that other processes are allowed to enter their critical sections after a
+process has made a request to enter its critical section and before that
+request is granted.
+</p>  
+
+<br>
+</b></p>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="about.html">About</a>
+    <a href="software.html">Software approaches</a>
+    <a href="hardware.html">Hardware approaches</a>
+    <a href="osapp.html">OS approaches</a>
+  </div>
+</div>
+
+<p>Click on the element below to know more about mutual exclusion</p>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; mutex</span>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+<h3>To get a detailed idea about "deadlocks" ,click on the link below :</h3>
+<p><b><a href="DEADLOCKS.html" target="file">DEADLOCKS</a></b></p>     
+</body>
+</html>
+
+</body>
+</html>
+
+

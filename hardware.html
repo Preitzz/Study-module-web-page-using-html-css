@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            height: 100%;
+            background-color: rgb(77, 167, 183);
+            background-image:linear-gradient(to right,rgba(241, 188, 237, 0.975),rgba(179, 4, 223, 0.345));}
+          h2 {
+            color: rgb(255, 255, 255);
+             text-transform: uppercase;
+            text-align: center;
+             text-shadow: 2px 2px 4px rgb(151, 252, 243) ; 
+             font-size: 45px;
+          }
+          div {
+      
+      font-size:larger;
+  }
+          ul.a {life-style-type:circle;
+        }
+        mark{
+  background-color: rgb(245, 149, 221);
+ } 
+    </style>
+    </head>
+    <body>
+    <h2>HARDWARE APPROACHES</h2>
+  <div><ul class="a"><li>Process Synchronization problems occur when two processes running concurrently share the same data or same variable.<br>
+     The value of that variable may not be updated correctly before its being used by a second process. Such a condition is known as Race Around Condition.  </li><br>
+    <li>The algorithms in the hardware approach of solving Process Synchronization problem are: 
+
+        Test and Set 
+        Swap 
+        </li>
+    <br><li><b>
+        1. Test and Set : <br></b>
+        Here, the shared variable is lock which is initialized to false.<br>
+         TestAndSet(lock) algorithm works in this way – <mark>It always returns whatever value is sent to it and sets lock to true</mark> .<br>
+          The first process will enter the critical section at once as TestAndSet(lock) will return false and it’ll break out of the while loop.<br>
+           The other processes cannot enter now as lock is set to true and so the while loop continues to be true. Mutual exclusion is ensured.</li></br>
+
+           <li><br> Test and Set Pseudocode – </br>
+            <img src="test.png" alt="mutex" width="400" height="330"><br>
+            <img src="test1.png" alt="mutex" width="500" height="430"><br>
+            </li><br>
+            <br>
+           <li><b> 2. Swap : <br></b>
+            Swap algorithm is a lot like the TestAndSet algorithm. <br>
+            Instead of directly setting lock to true in the swap function,<mark> key is set to true and then swapped with lock </mark>.<br>
+            So, again, when a process is in the critical section, no other process gets to enter it as the value of lock is true.<br>
+             Mutual exclusion is ensured..</li><br>
+<li> <i>Swap Pseudocode – <br>
+
+    <img src="swap.png" alt="mutex" width="400" height="330"><br>
+            <img src="swap1.png" alt="mutex" width="400" height="330"><br>
+    </li></i></ul></div></body></html>
